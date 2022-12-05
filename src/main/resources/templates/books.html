@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Books</h1>
+	<a href="/book/create">CREATE NEW BOOK</a>
+	<ul>
+		<li
+			th:each="book : ${books}"
+			th:object="${book}"
+		>
+			([[*{isbn}]])
+			<a
+				th:href="@{/book/{id} (id=*{id})}"
+			>
+				 [[*{title}]]
+			</a><br>
+			[[*{numberOfCopies}]] - [[*{year}]] -
+			<a
+				th:href="@{/book/update/{id} (id=*{id})}"
+			>
+				UPDATE
+			</a> - 
+			<a
+				th:href="@{/book/delete/{id} (id=*{id})}"
+			>
+				DELETE
+			</a>
+		</li>
+	</ul>
+</body>
+</html>

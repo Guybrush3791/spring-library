@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${book}">
+	<h1>Books</h1>
+
+	([[*{isbn}]])
+	<a
+		th:href="@{/book/{id} (id=*{id})}"
+	>
+		 [[*{title}]]
+	</a><br>
+	[[*{numberOfCopies}]] - [[*{year}]]
+</body>
+</html>

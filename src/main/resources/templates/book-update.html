@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Book UPDATE</h1>
+	<form 
+		method="POST" 
+		action="/book/store"
+		th:object="${book}" >
+	
+		<input type="number" name="id" th:field="*{id}" style="display:none">
+	
+		<label>Title</label>
+		<input type="text" name="title" th:field="*{title}">
+		<br>
+		<label>ISBN</label>
+		<input type="text" name="isbn" th:field="*{isbn}">
+		<br>
+		<label>Copy Number</label>
+		<input type="number" name="numberOfCopies" th:field="*{numberOfCopies}">
+		<br>
+		<label>Year</label>
+		<input type="number" name="year" th:field="*{year}">
+		<br>
+		<input type="submit" value="UPDATE">
+	
+	</form>
+</body>
+</html>
